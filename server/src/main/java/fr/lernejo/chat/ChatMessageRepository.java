@@ -10,14 +10,14 @@ public class ChatMessageRepository {
     List<String> messages = new ArrayList<>();
 
     void addChatMessage(String message) {
-        if(this.messages.size() > 9) {
-            this.messages.remove(0);
+        if(messages.size() >= 10) {
+            messages.remove(0);
         }
-        this.messages.add(message);
+        messages.add(message);
     }
 
     List<String> getLastTenMessages() {
-        return this.messages;
+        return messages;
     }
 
 

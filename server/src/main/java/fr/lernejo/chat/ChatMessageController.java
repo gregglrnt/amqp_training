@@ -7,13 +7,13 @@ import java.util.List;
 
 @RestController
 public class ChatMessageController {
-    private ChatMessageRepository chatMessages;
+    private final ChatMessageRepository chatMessages;
 
     public ChatMessageController(ChatMessageRepository cmr) {
         this.chatMessages = cmr;
     }
 
-    @GetMapping("/api/messages")
+    @GetMapping("/api/message")
     List<String> getMessagesFromApi() {
         return this.chatMessages.getLastTenMessages();
     }
